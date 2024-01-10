@@ -15,11 +15,7 @@ import java.util.List;
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
     @Query(value =
-       "SELECT account.account_number " +
-               "FROM Account account " +
-               "where account.STATUS = 'active' " +
-               "LIMIT ?1"
-//               "and rownum <= 1"
+            "SELECT pgp_sym_decrypt(account.account_number\\:\\:bytea, 'mysecret') FROM Account account where account.STATUS = 'active' LIMIT ?1"
             , nativeQuery = true
     )
     List<String> findAccountsByReadLimit(@Param("accountReadLimit") int accountReadLimit);
