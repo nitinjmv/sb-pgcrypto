@@ -1,0 +1,22 @@
+# Picks up the data.sql
+spring:
+  sql:
+    init:
+      mode: always
+
+pg:
+  datasource:
+    username: test_user
+    jdbcUrl: jdbc:postgresql://localhost:5432/test
+    driverClassName: org.postgresql.Driver
+    initialize: true
+    password: root
+  jpa:
+    generate-ddl: true
+    defer-datasource-initialization: true
+    show-sql: true
+    hibernate:
+      ddl-auto: create-drop
+
+pgcrypto:
+  secret: ${key.secret}
