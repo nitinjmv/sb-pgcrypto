@@ -1,4 +1,4 @@
-package com.example.sbpgcrypto1;
+package com.example.sbpgcrypto;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

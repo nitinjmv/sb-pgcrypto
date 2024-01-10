@@ -1,6 +1,6 @@
-package com.example.sbpgcrypto1.repository;
+package com.example.sbpgcrypto.repository;
 
-import com.example.sbpgcrypto1.entity.Account;
+import com.example.sbpgcrypto.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -15,8 +15,8 @@ public interface AccountRepository extends JpaRepository<Account, Long> {
        "SELECT account.account_number " +
                "FROM Account account " +
                "where account.accountStatus = 'active' " +
-               "or account.accountStatus = 'inactive' " +
-               "and rownum <= accountReadLimit"
+               "or account.accountStatus = 'inactive' "
+//               "and rownum <= accountReadLimit"
     )
     List<String> findAccountsByReadLimit(@Param("accountReadLimit") Long accountReadLimit);
 

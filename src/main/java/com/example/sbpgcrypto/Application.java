@@ -1,4 +1,4 @@
-package com.example.sbpgcrypto1;
+package com.example.sbpgcrypto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

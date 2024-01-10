@@ -1,8 +1,8 @@
-package com.example.sbpgcrypto1.controller;
+package com.example.sbpgcrypto.controller;
 
-import com.example.sbpgcrypto1.dto.BulkAccountsDto;
-import com.example.sbpgcrypto1.entity.Account;
-import com.example.sbpgcrypto1.service.AccountService;
+import com.example.sbpgcrypto.dto.BulkAccountsDto;
+import com.example.sbpgcrypto.entity.Account;
+import com.example.sbpgcrypto.service.AccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;

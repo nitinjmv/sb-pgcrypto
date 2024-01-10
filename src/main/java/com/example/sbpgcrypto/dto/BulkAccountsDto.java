@@ -1,4 +1,4 @@
-package com.example.sbpgcrypto1.dto;
+package com.example.sbpgcrypto.dto;
 
 import lombok.Data;
 

@@ -1,8 +1,8 @@
-package com.example.sbpgcrypto1.repository;
+package com.example.sbpgcrypto.repository;
 
-import com.example.sbpgcrypto1.config.PostgresConfig;
-import com.example.sbpgcrypto1.dto.BulkAccountsDto;
-import com.example.sbpgcrypto1.util.PreparedStatementUtil;
+import com.example.sbpgcrypto.config.PostgresConfig;
+import com.example.sbpgcrypto.dto.BulkAccountsDto;
+import com.example.sbpgcrypto.util.PreparedStatementUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Repository;

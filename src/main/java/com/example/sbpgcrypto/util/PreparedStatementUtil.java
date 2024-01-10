@@ -1,14 +1,12 @@
-package com.example.sbpgcrypto1.util;
+package com.example.sbpgcrypto.util;
 
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.List;
 
 @Component
 public class PreparedStatementUtil {

@@ -1,4 +1,4 @@
-package com.example.sbpgcrypto1.config;
+package com.example.sbpgcrypto.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.jdbc.DataSourceBuilder;

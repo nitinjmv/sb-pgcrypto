@@ -1,9 +1,9 @@
-package com.example.sbpgcrypto1.service;
+package com.example.sbpgcrypto.service;
 
-import com.example.sbpgcrypto1.dto.BulkAccountsDto;
-import com.example.sbpgcrypto1.entity.Account;
-import com.example.sbpgcrypto1.repository.BulkAccountRepository;
-import com.example.sbpgcrypto1.repository.AccountRepository;
+import com.example.sbpgcrypto.dto.BulkAccountsDto;
+import com.example.sbpgcrypto.entity.Account;
+import com.example.sbpgcrypto.repository.BulkAccountRepository;
+import com.example.sbpgcrypto.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

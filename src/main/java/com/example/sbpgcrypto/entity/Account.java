@@ -1,4 +1,4 @@
-package com.example.sbpgcrypto1.entity;
+package com.example.sbpgcrypto.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
