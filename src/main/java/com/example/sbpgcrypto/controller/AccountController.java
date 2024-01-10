@@ -48,7 +48,7 @@ public class AccountController {
 
     @GetMapping("{limit}")
     public List<String> getAccountsByReadLimit(
-            @PathVariable("limit") long limit){
+            @PathVariable("limit") int limit){
         return accountService.getAccountByReadLimit(limit);
     }
 

@@ -5,6 +5,7 @@ import com.example.sbpgcrypto.entity.Account;
 import com.example.sbpgcrypto.repository.BulkAccountRepository;
 import com.example.sbpgcrypto.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,7 +40,7 @@ public class AccountService {
         return accountRepository.findByAccountStatus(status);
     }
 
-    public List<String> getAccountByReadLimit(Long accountReadLimit) {
+    public List<String> getAccountByReadLimit(int accountReadLimit) {
         return accountRepository.findAccountsByReadLimit(accountReadLimit);
     }
 }

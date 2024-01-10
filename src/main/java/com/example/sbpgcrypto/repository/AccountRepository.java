@@ -1,6 +1,9 @@
 package com.example.sbpgcrypto.repository;
 
 import com.example.sbpgcrypto.entity.Account;
+import jakarta.persistence.EntityManager;
+import lombok.RequiredArgsConstructor;
+import org.hibernate.query.spi.Limit;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,14 +14,15 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
 
-    @Query(
+    @Query(value =
        "SELECT account.account_number " +
                "FROM Account account " +
-               "where account.accountStatus = 'active' " +
-               "or account.accountStatus = 'inactive' "
-//               "and rownum <= accountReadLimit"
+               "where account.STATUS = 'active' " +
+               "LIMIT ?1"
+//               "and rownum <= 1"
+            , nativeQuery = true
     )
-    List<String> findAccountsByReadLimit(@Param("accountReadLimit") Long accountReadLimit);
+    List<String> findAccountsByReadLimit(@Param("accountReadLimit") int accountReadLimit);
 
     List<Account> findByAccountType(String type);
 
