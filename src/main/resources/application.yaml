@@ -1,8 +1,12 @@
 # Picks up the data.sql
+server:
+  port: 8081
+
 spring:
   sql:
     init:
       mode: always
+
 
 pg:
   datasource:

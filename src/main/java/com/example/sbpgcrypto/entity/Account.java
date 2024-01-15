@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.time.Instant;
 
@@ -36,16 +37,17 @@ public class Account {
 
     @ColumnTransformer(
             forColumn = "ACCOUNT_NUMBER",
-            read = "pgp_sym_decrypt(ACCOUNT_NUMBER::bytea, 'mysecret')",
-            write = "pgp_sym_encrypt(?, 'mysecret')"
+            read = "pgp_sym_decrypt(ACCOUNT_NUMBER::bytea, '${pgcrypto.secret}')",
+            write = "pgp_sym_encrypt(?, '${pgcrypto.secret}')"
     )
     @Column(name = "ACCOUNT_NUMBER", updatable = false)
-    private String account_number;
+    private String accountNumber;
 
     @Column(name = "ACCOUNT_TYPE")
     private String accountType;
 
-    @Column(name = "CREATED_DATE", updatable = false)
+    @Column(name = "CREATED_DATE", updatable = false, columnDefinition = "TIMESTAMP")
+    @CreationTimestamp
     private Instant createdDate;
 
     @Column(name = "STATUS")
