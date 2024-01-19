@@ -15,7 +15,7 @@ import java.time.Instant;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "ACCOUNT")
+@Table(name = "ACCT_TABLE")
 public class Account {
 
     @Id
@@ -41,16 +41,16 @@ public class Account {
             write = "pgp_sym_encrypt(?, '${pgcrypto.secret}')"
     )
     @Column(name = "ACCOUNT_NUMBER", updatable = false)
-    private String accountNumber;
+    private String number;
 
     @Column(name = "ACCOUNT_TYPE")
-    private String accountType;
+    private String type;
 
     @Column(name = "CREATED_DATE", updatable = false, columnDefinition = "TIMESTAMP")
     @CreationTimestamp
     private Instant createdDate;
 
-    @Column(name = "STATUS")
-    private String accountStatus;
+    @Column(name = "STS")
+    private String status;
 
 }

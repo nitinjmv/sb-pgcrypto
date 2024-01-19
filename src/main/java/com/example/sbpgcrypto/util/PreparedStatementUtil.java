@@ -11,8 +11,8 @@ import java.time.Instant;
 @Component
 public class PreparedStatementUtil {
 
-    private static String query = "INSERT INTO ACCOUNT (ACCOUNT_ID, ACCOUNT_NUMBER, ACCOUNT_TYPE, CREATED_DATE, STATUS) " +
-            "VALUES (nextval('AAS_EXCLD_PAN_SEQUENCE'), pgp_sym_encrypt(?, '${pgcrypto.secret}'), ?, ?, ?)";
+    private static String query = "INSERT INTO ACCT_TABLE (ACCOUNT_ID, ACCOUNT_NUMBER, ACCOUNT_TYPE, CREATED_DATE, STS) " +
+            "VALUES (nextval('ACCOUNT_SEQUENCE'), pgp_sym_encrypt(?, '${pgcrypto.secret}'), ?, ?, ?)";
 
     public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
         return connection.prepareStatement(query);

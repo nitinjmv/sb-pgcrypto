@@ -5,7 +5,6 @@ import com.example.sbpgcrypto.entity.Account;
 import com.example.sbpgcrypto.repository.BulkAccountRepository;
 import com.example.sbpgcrypto.repository.AccountRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Limit;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -33,14 +32,15 @@ public class AccountService {
 
 
     public List<Account> getAccountsByType(String type) {
-        return accountRepository.findByAccountType(type);
+        return accountRepository.findByType(type);
     }
 
     public List<Account> getAccountsByStatus(String status) {
-        return accountRepository.findByAccountStatus(status);
+        return accountRepository.findByStatus(status);
     }
 
-    public List<String> getAccountByReadLimit(int accountReadLimit) {
+    public List<String> getAccountByReadLimit(Long accountReadLimit) {
         return accountRepository.findAccountsByReadLimit(accountReadLimit);
     }
+
 }

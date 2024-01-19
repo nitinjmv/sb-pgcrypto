@@ -22,9 +22,9 @@ public class AccountController {
     @PostMapping("bulk")
     public void uploadAccounts(
             @RequestBody BulkAccountsDto bulkAccountsDto,
-            @RequestParam("account_type") String accountType,
-            @RequestParam("account_status") String accountStatus){
-        accountService.bulkUpload(bulkAccountsDto, accountType, accountStatus);
+            @RequestParam("type") String type,
+            @RequestParam("status") String status){
+        accountService.bulkUpload(bulkAccountsDto, type, status);
     }
     @PostMapping
     public Account createAccount(@RequestBody Account account){
@@ -46,10 +46,16 @@ public class AccountController {
         return accountService.getAccounts();
     }
 
-    @GetMapping("{limit}")
-    public List<String> getAccountsByReadLimit(
-            @PathVariable("limit") int limit){
-        return accountService.getAccountByReadLimit(limit);
+//    @GetMapping("{limit}")
+//    public List<String> getAccountsByReadLimit(
+//            @PathVariable("limit") int limit){
+//        return accountService.getAccountByReadLimit(limit);
+//    }
+
+    @GetMapping("limit")
+    public List<String> getAccountsByReadLimitRequestParam(
+            @RequestParam Long accountReadLimit){
+        return accountService.getAccountByReadLimit(accountReadLimit);
     }
 
 }
